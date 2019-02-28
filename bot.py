@@ -50,7 +50,7 @@ def caps(bot, update, args):
     text_caps = ' '.join(args).upper()
     bot.send_message(chat_id=update.message.chat_id, text=text_caps)
     caps_handler = CommandHandler('caps', caps, pass_args=True)
-    dispatcher.add_handler(caps_handler
+    dispatcher.add_handler(caps_handler)
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 def inline(bot, update):
