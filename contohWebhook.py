@@ -29,6 +29,6 @@ def OnMessage(message):
 
 
 if __name__ == "__main__":
-    bot.setWebhook(url="https://8f0eb3c2.ap.ngrok.io/webhook")
+    bot.setWebhook(url="https://days10.herokuapp.com/webhook")
     print(bot.getMe())
     app.run()
