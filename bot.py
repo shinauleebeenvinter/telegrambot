@@ -1,5 +1,6 @@
-TOKEN = "667940096:AAHPD6lVQ1yTxRsZi48HXPilfAhVkO3sYhY"
+#TOKEN = "667940096:AAHPD6lVQ1yTxRsZi48HXPilfAhVkO3sYhY"
 
+import os
 import telegram
 bot = telegram.Bot(token= str(TOKEN))
 print(bot.get_me())
@@ -44,5 +45,23 @@ def unknown(bot, update):
     unknown_handler = MessageHandler(Filters.command, unknown)
     dispatcher.add_handler(unknown_handler)
 
-updater.start_polling()
-updater.idle()    
+#updater.start_polling()
+if __name__ == "__main__":
+    
+    TOKEN = "667940096:AAHPD6lVQ1yTxRsZi48HXPilfAhVkO3sYhY"
+    NAME = "days10"
+
+    PORT = os.environ.get('PORT')
+
+    logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                        level=logging.INFO)
+    logger = logging.getLogger(__name__)
+
+    updater = Updater(TOKEN)
+    dp = updater.dispatcher
+    
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN)
+    updater.bot.setWebhook("https://{}.herokuapp.com/{}".format(NAME, TOKEN))
+    updater.idle()    
