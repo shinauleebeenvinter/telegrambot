@@ -49,8 +49,8 @@ dispatcher.add_handler(echo_handler)
 def caps(bot, update, args):
     text_caps = ' '.join(args).upper()
     bot.send_message(chat_id=update.message.chat_id, text=text_caps)
-caps_handler = CommandHandler('caps', caps, pass_args=True)
-dispatcher.add_handler(caps_handler
+    caps_handler = CommandHandler('caps', caps, pass_args=True)
+    dispatcher.add_handler(caps_handler
 
                        from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 def inline(bot, update):
@@ -60,7 +60,6 @@ def inline(bot, update):
                 [InlineKeyboardButton("Option 3", callback_data='3')]]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
-
     update.message.reply_text('Please choose:', reply_markup=reply_markup)
     
 from telegram.ext import CommandHandler
@@ -76,12 +75,12 @@ def button(bot, update):
                           message_id=query.message.message_id)
 
 from telegram.ext import Updater, CallbackQueryHandler
-updater.dispatcher.add_handler(CallbackQueryHandler(button))
+    updater.dispatcher.add_handler(CallbackQueryHandler(button))
                        
-                   def unknown(bot, update):
+def unknown(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text="Sorry, I didn't understand that command.")
-unknown_handler = MessageHandler(Filters.command, unknown)
-dispatcher.add_handler(unknown_handler)
+    unknown_handler = MessageHandler(Filters.command, unknown)
+    dispatcher.add_handler(unknown_handler)
 
 updater.start_polling()
 updater.idle()    
