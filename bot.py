@@ -1,16 +1,3 @@
-import logging
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
-logger = logging.getLogger()
-loggers = logger.setLevel(logging.INFO)
-
-print(logger)
-print(loggers)
-
-loggert = logger.setLevel(logging.DEBUG)
-print(loggert)
-
 TOKEN = "667940096:AAHPD6lVQ1yTxRsZi48HXPilfAhVkO3sYhY"
 
 import telegram
@@ -26,17 +13,17 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                      level=logging.INFO)
 
 def start(bot, update):
-    bot.send_message(chat_id=update.message.chat_id, text="I'm a bot, please talk to me! or /help /me")
+    bot.send_message(chat_id=update.message.chat_id, text="Hello, testing bot with heroku")
 
 from telegram.ext import CommandHandler
 start_handler = CommandHandler('start', start)
 dispatcher.add_handler(start_handler)
 
 def me(bot, update):
-    bot.send_message(chat_id=update.message.chat_id, text="me ooonnggg")
+    bot.send_message(chat_id=update.message.chat_id, text="tings!")
 
 from telegram.ext import CommandHandler
-me_handler = CommandHandler('me', me)
+me_handler = CommandHandler('test', me)
 dispatcher.add_handler(me_handler)
 
 def echo(bot, update):
@@ -63,7 +50,7 @@ def inline(bot, update):
     update.message.reply_text('Please choose:', reply_markup=reply_markup)
     
 from telegram.ext import CommandHandler
-inline_handler = CommandHandler('in', inline)
+inline_handler = CommandHandler('inline', inline)
 dispatcher.add_handler(inline_handler)
 
 
