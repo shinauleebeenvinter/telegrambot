@@ -11,7 +11,7 @@ print(loggers)
 loggert = logger.setLevel(logging.DEBUG)
 print(loggert)
 
-#TOKEN = ""
+TOKEN = ""
 
 import telegram
 bot = telegram.Bot(token= str(TOKEN))
