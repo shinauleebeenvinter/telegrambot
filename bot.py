@@ -52,7 +52,7 @@ def caps(bot, update, args):
     caps_handler = CommandHandler('caps', caps, pass_args=True)
     dispatcher.add_handler(caps_handler
 
-                       from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 def inline(bot, update):
     keyboard = [[InlineKeyboardButton("Option 1", callback_data='1'),
                  InlineKeyboardButton("Option 2", callback_data='2')],
