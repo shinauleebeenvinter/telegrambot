@@ -59,12 +59,13 @@ if __name__ == "__main__":
                         level=logging.INFO)
     logger = logging.getLogger(__name__)
 
-    updater = Updater(TOKEN)
-    dp = updater.dispatcher
+    from telegram.ext import Updater
+    updater = Updater(token= str(TOKEN))
+    dispatcher = updater.dispatcher
     
-    dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(MessageHandler(Filters.text, echo))
-    dp.add_error_handler(error)
+    #dispatcher.add_handler(CommandHandler('start', start))
+    #dispatcher.add_handler(MessageHandler(Filters.text, echo))
+    #dispatcher.add_error_handler(error)
     
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
