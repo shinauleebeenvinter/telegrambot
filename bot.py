@@ -1,73 +1,87 @@
 import logging
-import os
-from queue import Queue
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-import cherrypy
+logger = logging.getLogger()
+loggers = logger.setLevel(logging.INFO)
+
+print(logger)
+print(loggers)
+
+loggert = logger.setLevel(logging.DEBUG)
+print(loggert)
+
+TOKEN = "667940096:AAHPD6lVQ1yTxRsZi48HXPilfAhVkO3sYhY"
+
 import telegram
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Dispatcher
+bot = telegram.Bot(token= str(TOKEN))
+print(bot.get_me())
+
+from telegram.ext import Updater
+updater = Updater(token= str(TOKEN))
+dispatcher = updater.dispatcher
+
+import logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                     level=logging.INFO)
+
+def start(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text="I'm a bot, please talk to me! or /help /me")
+
+from telegram.ext import CommandHandler
+start_handler = CommandHandler('start', start)
+dispatcher.add_handler(start_handler)
+
+def me(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text="me ooonnggg")
+
+from telegram.ext import CommandHandler
+me_handler = CommandHandler('me', me)
+dispatcher.add_handler(me_handler)
+
+def echo(bot, update):
+     bot.send_message(chat_id=update.message.chat_id, text=update.message.text)
+
+from telegram.ext import MessageHandler, Filters
+echo_handler = MessageHandler(Filters.text, echo)
+dispatcher.add_handler(echo_handler)
+
+def caps(bot, update, args):
+    text_caps = ' '.join(args).upper()
+    bot.send_message(chat_id=update.message.chat_id, text=text_caps)
+caps_handler = CommandHandler('caps', caps, pass_args=True)
+dispatcher.add_handler(caps_handler
+
+                       from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+def inline(bot, update):
+    keyboard = [[InlineKeyboardButton("Option 1", callback_data='1'),
+                 InlineKeyboardButton("Option 2", callback_data='2')],
+
+                [InlineKeyboardButton("Option 3", callback_data='3')]]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    update.message.reply_text('Please choose:', reply_markup=reply_markup)
+    
+from telegram.ext import CommandHandler
+inline_handler = CommandHandler('in', inline)
+dispatcher.add_handler(inline_handler)
 
 
-class SimpleWebsite(object):
-    @cherrypy.expose
-    def index(self):
-        return """<H1>Welcome!</H1>"""
 
+def button(bot, update):
+    query = update.callback_query
+    bot.edit_message_text(text="Selected option: {}".format(query.data),
+                          chat_id=query.message.chat_id,
+                          message_id=query.message.message_id)
 
-class BotComm(object):
-    exposed = True
+from telegram.ext import Updater, CallbackQueryHandler
+updater.dispatcher.add_handler(CallbackQueryHandler(button))
+                       
+                   def unknown(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text="Sorry, I didn't understand that command.")
+unknown_handler = MessageHandler(Filters.command, unknown)
+dispatcher.add_handler(unknown_handler)
 
-    def __init__(self, TOKEN, NAME):
-        super(BotComm, self).__init__()
-        self.TOKEN = TOKEN
-        self.NAME=NAME
-        self.bot = telegram.Bot(self.TOKEN)
-        try:
-            self.bot.setWebhook("https://{}.herokuapp.com/{}".format(self.NAME, self.TOKEN))
-        except:
-            raise RuntimeError("Failed to set the webhook")
-
-        self.update_queue = Queue()
-        self.dp = Dispatcher(self.bot, self.update_queue)
-
-        self.dp.add_handler(CommandHandler("start", self._start))
-        self.dp.add_handler(MessageHandler(Filters.text, self._echo))
-        self.dp.add_error_handler(self._error)
-
-    @cherrypy.tools.json_in()
-    def POST(self, *args, **kwargs):
-        update = cherrypy.request.json
-        update = telegram.Update.de_json(update, self.bot)
-        self.dp.process_update(update)
-
-    def _error(self, error):
-        cherrypy.log("Error occurred - {}".format(error))
-
-    def _start(self, bot, update):
-        update.effective_message.reply_text("Hi!")
-
-
-    def _echo(self, bot, update):
-        update.effective_message.reply_text(update.effective_message.text)
-
-
-if __name__ == "__main__":
-    # Set these variable to the appropriate values
-    #TOKEN = "Your token from @Botfather"
-    #NAME = "The name of your app on Heroku"
-
-    # Port is given by Heroku
-    PORT = os.environ.get('PORT')
-
-    # Enable logging
-    logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                        level=logging.INFO)
-    logger = logging.getLogger(__name__)
-
-    # Set up the cherrypy configuration
-    cherrypy.config.update({'server.socket_host': '0.0.0.0', })
-    cherrypy.config.update({'server.socket_port': int(PORT), })
-    cherrypy.tree.mount(SimpleWebsite(), "/")
-    cherrypy.tree.mount(BotComm(TOKEN, NAME),
-                        "/{}".format(TOKEN),
-                        {'/': {'request.dispatch': cherrypy.dispatch.MethodDispatcher()}})
-    cherrypy.engine.start()
+updater.start_polling()
+updater.idle()    
