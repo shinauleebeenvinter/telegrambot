@@ -75,7 +75,7 @@ def button(bot, update):
                           message_id=query.message.message_id)
 
 from telegram.ext import Updater, CallbackQueryHandler
-    updater.dispatcher.add_handler(CallbackQueryHandler(button))
+updater.dispatcher.add_handler(CallbackQueryHandler(button))
                        
 def unknown(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text="Sorry, I didn't understand that command.")
