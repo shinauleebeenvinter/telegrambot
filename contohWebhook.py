@@ -2,7 +2,6 @@ from flask import Flask, request
 from telepot import Bot
 import telepot
 
-
 TOKEN = "667940096:AAHPD6lVQ1yTxRsZi48HXPilfAhVkO3sYhY"
 app = Flask(__name__)
 bot = Bot(TOKEN)
@@ -17,6 +16,9 @@ def index():
                 OnMessage(messages["message"])
         return "OK"
     else:
+        bot.setWebhook(url="https://days10.herokuapp.com/webhook")
+        print(bot.getWebhookInfo())
+        print(bot.getMe())
         return "webhook"
 
 
@@ -29,6 +31,4 @@ def OnMessage(message):
 
 
 if __name__ == "__main__":
-    bot.setWebhook(url="https://days10.herokuapp.com/webhook")
-    print(bot.getMe())
-    app.run()
+    app.run(debug=True)
