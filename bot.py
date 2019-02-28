@@ -1,6 +1,6 @@
 TOKEN = "667940096:AAHPD6lVQ1yTxRsZi48HXPilfAhVkO3sYhY"
 
-import os
+
 import telegram
 bot = telegram.Bot(token= str(TOKEN))
 print(bot.get_me())
@@ -46,6 +46,8 @@ def unknown(bot, update):
     dispatcher.add_handler(unknown_handler)
 
 #updater.start_polling()
+import os
+import logging
 if __name__ == "__main__":
     
     TOKEN = "667940096:AAHPD6lVQ1yTxRsZi48HXPilfAhVkO3sYhY"
