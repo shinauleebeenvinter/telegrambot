@@ -45,7 +45,8 @@ def unknown(bot, update):
     unknown_handler = MessageHandler(Filters.command, unknown)
     dispatcher.add_handler(unknown_handler)
 
-#updater.start_polling()
+updater.start_polling()
+'''
 import os
 import logging
 if __name__ == "__main__":
@@ -71,4 +72,5 @@ if __name__ == "__main__":
                           port=int(PORT),
                           url_path=TOKEN)
     updater.bot.setWebhook("https://{}.herokuapp.com/{}".format(NAME, TOKEN))
-    updater.idle()    
+    '''
+updater.idle()    
