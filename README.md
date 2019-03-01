@@ -6,20 +6,16 @@
 | Item                  | Status                                     |
 | :-------------------- | :---------------------------------------- |
 | register Heroku                    | Done                              |
-|                     | I3-gaps, Openbox                          |
-| Shell                 | Zsh _(oh-my-zsh)_                         |
-| DM                    | Lightdm                                   |
-| Font                  | Iosevka Nerd Font, SauceCodePro Nerd Font |
-| Compositor            | Compton                                   |
-| Notification          | Dunst                                     |
-| Terminal              | URxvt, Termite                            |
-| Launcher              | rofi, dmenu, jgmenu                       |
-| Bar                   | polybar                                   |
-| Wallpaper             | feh                                       |
-| Lock Screen           | i3lock, mantablockscreen                  |
+| register Github                    | Done                          |
+| instal Heroku CLI                 | Zsh _(oh-my-zsh)_                         |
+| instal cmder                    | Lightdm                                   |
+| scripting bot                  | Iosevka Nerd Font, SauceCodePro Nerd Font |
+| testing local            | Compton                                   |
+| making apps          | Dunst                                     |
+| making file              | URxvt, Termite                            |
+| git setting              | rofi, dmenu, jgmenu                       |
+| deploying                   | polybar                                   |
+| testing             | feh                                       |
+| learning           | i3lock, mantablockscreen                  |
 | Logout / Shutdown     | rofi-tools                                |
-| Volume Control        | pulseaudio-ctl, amixer                    |
-| Brightness Controller | xbacklight                                |
-| Network Applet        | nm-applet                                 |
-| Bluetooth Applet      | blueman-applet                            |
-| Text Editor           | neovim, nano, vscode, sublime             |
+
