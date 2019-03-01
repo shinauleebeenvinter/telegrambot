@@ -22,3 +22,8 @@
 | OS                    | Manjaro 18.0                              |
 | WM                    | I3-gaps, Openbox                          |
 | Shell                 | Zsh _(oh-my-zsh)_                         |
+
+##table
+| Item                  | Value                                     |
+| :-------------------- | :---------------------------------------- |
+| OS                    |                                            |
