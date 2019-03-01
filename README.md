@@ -17,5 +17,9 @@
 | deploying                   | Done                                   |
 | testing             | Processing                                       |
 | learning Git           | Processing                  |
+| learning py     | Processing                                |
+| asking someone     | Sometime                                |
 | Logout / Shutdown     | Sometime                                |
 
+# "All Thing's are Difficult Before They are Easy"
+* just my words ( keep trying )
