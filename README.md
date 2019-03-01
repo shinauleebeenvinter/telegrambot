@@ -23,3 +23,6 @@
 
 # "All Thing's are Difficult Before They are Easy"
 * just my words ( keep trying )
+
+# "Behind the difficulties there is convenience"
+* Holly Qur'an say that
