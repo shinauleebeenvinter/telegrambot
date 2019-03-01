@@ -1,10 +1,10 @@
 # Telegrambot
-## Loggin into heroku
-### Connect into github
-#### Deploying apps
-##### Testing
+*loggin into heroku
+*Connect into github
+*Deploying apps
+*Testing
 
-#table
+# Just Planing
 
 | Plan                  | Action                                     |
 | :-------------------- | :---------------------------------------- |
