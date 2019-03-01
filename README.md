@@ -4,8 +4,7 @@
 #### Deploying apps
 ##### Testing
 #Table
-|:-------|:-------|
-| empty | empty |
+|||
 
 ##table
 | Item                  | Value                                     |
