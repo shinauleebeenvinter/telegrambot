@@ -7,15 +7,15 @@
 | :-------------------- | :---------------------------------------- |
 | register Heroku                    | Done                              |
 | register Github                    | Done                          |
-| instal Heroku CLI                 | Zsh _(oh-my-zsh)_                         |
-| instal cmder                    | Lightdm                                   |
-| scripting bot                  | Iosevka Nerd Font, SauceCodePro Nerd Font |
-| testing local            | Compton                                   |
-| making apps          | Dunst                                     |
-| making file              | URxvt, Termite                            |
-| git setting              | rofi, dmenu, jgmenu                       |
-| deploying                   | polybar                                   |
-| testing             | feh                                       |
-| learning           | i3lock, mantablockscreen                  |
-| Logout / Shutdown     | rofi-tools                                |
+| instal Heroku CLI                 | Done                         |
+| instal cmder                    | Done                                   |
+| scripting bot                  | Learning |
+| testing local            | Done                                   |
+| making apps          | Done                                     |
+| making file              | Done                            |
+| git setting              | Done                       |
+| deploying                   | Done                                   |
+| testing             | Done                                       |
+| learning           | Procesing                  |
+| Logout / Shutdown     | Sometime                                |
 
