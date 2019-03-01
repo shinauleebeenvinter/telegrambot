@@ -1,5 +1,5 @@
 # Telegrambot
-* loggin into heroku
+* Hosting into heroku
 * Connect into github
 * Deploying apps
 * Testing
@@ -8,5 +8,11 @@
 
 | Plan                  | Action                                     |
 | :-------------------- | :---------------------------------------- |
+| * Hosting into heroku
+                    | Learning                              |
 | Hosting                    | Learning                              |
+| Hosting                    | Learning                              |
+| Hosting                    | Learning                              |
+| Hosting                    | Learning                              |
+
 
