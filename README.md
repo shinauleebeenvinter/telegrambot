@@ -28,6 +28,6 @@
 * Holly Qur'an say that
 
 
-| tes tabel | tes lagi |
+| tes tabel | tes lagi | tes lagi |
 |:--------|:---------:|--------:|
 | 1 | 2 | 3 |
