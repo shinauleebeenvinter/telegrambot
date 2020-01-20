@@ -45,7 +45,7 @@ def unknown(bot, update):
     unknown_handler = MessageHandler(Filters.command, unknown)
     dispatcher.add_handler(unknown_handler)
 
-//updater.start_polling()
+#updater.start_polling()
 
 import os
 import logging
