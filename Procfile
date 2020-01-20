@@ -1,1 +1,1 @@
-web: gunicorn contohWebhook:app
+web: gunicorn bot:app
