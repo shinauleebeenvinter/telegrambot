@@ -52,7 +52,7 @@ import logging
 if __name__ == "__main__":
     
     TOKEN = "667940096:AAHPD6lVQ1yTxRsZi48HXPilfAhVkO3sYhY"
-    NAME = "days10/webhook"
+    NAME = "days10"
 
     PORT = os.environ.get('PORT')
 
