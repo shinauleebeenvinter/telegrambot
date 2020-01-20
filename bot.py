@@ -1,4 +1,4 @@
-TOKEN = ""
+TOKEN = "1010469706:AAGnCju4A6fsfKjo9Ubnoiy9uZeocwT64k4"
 
 
 import telegram
