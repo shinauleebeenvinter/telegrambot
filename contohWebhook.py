@@ -10,9 +10,6 @@ TOKEN = "1010469706:AAGnCju4A6fsfKjo9Ubnoiy9uZeocwT64k4"
 app = Flask(__name__)
 bot = Bot(TOKEN)
 
-response = bot.getUpdates()
-texts = pprint(response)
-
 @app.route("/webhook", methods=["POST", "GET"])
 def index():
     if request.method == "POST":
@@ -33,7 +30,9 @@ def OnMessage(message):
         message)
     if chat_type == "private":
         if content_type == "text":
-            bot.sendMessage(chat_id=chat_id, text=message["text"]+texts)
+            response = bot.getUpdates()
+            tuxts = pprint(response)
+            bot.sendMessage(chat_id=chat_id, text=message["text"]+tuxts)
 
 
 if __name__ == "__main__":
