@@ -2,6 +2,7 @@ from flask import Flask, request
 from telepot import Bot
 import telepot
 import os
+return dir(os)
 
 #TOKEN = "1010469706:AAGnCju4A6fsfKjo9Ubnoiy9uZeocwT64k4"
 os.environ(TOKEN)
