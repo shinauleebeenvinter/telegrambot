@@ -33,7 +33,7 @@ def OnMessage(message):
             if message["text"] == "/dump" :
                 messagex = request.get_json()
                 #bot.sendMessage(chat_id=chat_id, text=message["text"]+str(messagex))
-                bot.sendMessage(chat_id=chat_id, text=str(messagex))
+                bot.sendMessage(chat_id=chat_id, text=para_str(messagex))
 
 if __name__ == "__main__":
     app.run(debug=True)
