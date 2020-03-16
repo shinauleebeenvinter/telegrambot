@@ -1,5 +1,6 @@
 from flask import Flask, request
 from telepot import Bot
+from pprint import pprint
 import telepot
 #import os
 #return dir(os)
@@ -9,6 +10,8 @@ TOKEN = "1010469706:AAGnCju4A6fsfKjo9Ubnoiy9uZeocwT64k4"
 app = Flask(__name__)
 bot = Bot(TOKEN)
 
+response = bot.getUpdates()
+texts = pprint(response)
 
 @app.route("/webhook", methods=["POST", "GET"])
 def index():
@@ -30,7 +33,7 @@ def OnMessage(message):
         message)
     if chat_type == "private":
         if content_type == "text":
-            bot.sendMessage(chat_id=chat_id, text=message["text"])
+            bot.sendMessage(chat_id=chat_id, text=message["text"]+texts)
 
 
 if __name__ == "__main__":
