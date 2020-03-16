@@ -30,8 +30,8 @@ def OnMessage(message):
         message)
     if chat_type == "private":
         if content_type == "text":
-            response = bot.getUpdates()
-            tuxts = pprint(response)
+            #response = bot.getUpdates()
+            tuxts = "pprint(response)"
             bot.sendMessage(chat_id=chat_id, text=message["text"]+tuxts)
 
 
