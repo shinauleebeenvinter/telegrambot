@@ -2,7 +2,7 @@ from flask import Flask, request
 from telepot import Bot
 import telepot
 
-#TOKEN = "1010469706:AAGnCju4A6fsfKjo9Ubnoiy9uZeocwT64k4"
+TOKEN = "1010469706:AAGnCju4A6fsfKjo9Ubnoiy9uZeocwT64k4"
 app = Flask(__name__)
 bot = Bot(TOKEN)
 
